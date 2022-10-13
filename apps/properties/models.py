@@ -21,7 +21,7 @@ class Property(TimeStampedUUIDModel):
     class AdvertType(models.TextChoices):
         FOR_SALE = "For Sale", _("For Sale")
         FOR_RENT = "For Rent", _("For Rent")
-        AUCTIO = "Auction", _("Auction")
+        AUCTION = "Auction", _("Auction")
 
 
     class PropertyType(models.TextChoices):
@@ -69,7 +69,7 @@ class Property(TimeStampedUUIDModel):
 
     def save(self, *args, **kwargs):
         self.title = str.title(self.title)
-        self.description = str.description(self.description)
+        self.description = str.capitalize(self.description)
         self.ref_code = "".join(random.choices(string.ascii_uppercase +  string.digits, k=20))
         super(Property, self).save(*args, **kwargs)
 
