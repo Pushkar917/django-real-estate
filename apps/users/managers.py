@@ -64,6 +64,6 @@ class CustomUserManager(BaseUserManager):
         else:
             raise ValueError(_('Admin account: An email address is required'))
         user = self.create_user(email, username, first_name, last_name, password, **extra_fields)
-        user.save(self._db)
+        user.save(using=self._db)
         return user 
 

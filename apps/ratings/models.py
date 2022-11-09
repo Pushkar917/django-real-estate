@@ -1,9 +1,5 @@
-from email.policy import default
-from random import choices
-from tabnanny import verbose
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from sqlalchemy import null
 from real_state.settings.base  import AUTH_USER_MODEL
 from apps.common.models import TimeStampedUUIDModel
 from apps.profiles.models import Profile

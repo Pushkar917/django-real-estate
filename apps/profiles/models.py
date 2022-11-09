@@ -1,8 +1,5 @@
-from email.policy import default
-from tabnanny import verbose
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
-from sqlalchemy import null
 from django_countries.fields import CountryField
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
@@ -31,7 +28,7 @@ class Profile(TimeStampedUUIDModel):
     country = CountryField(verbose_name=_("Country"), default="IN", blank=False, null=False)
     city = models.CharField(verbose_name=_("City"), max_length=180, default="Bangalore", blank=False, null=False)
     is_buyer = models.BooleanField(verbose_name=_("Buyer"), default=False, help_text=_("Are you looking to buy a property?"))
-    is_seller = models.BooleanField(verbose_name=_("Seller"), default=False, help_text=_("Are you looking to sell a property?"))
+    is_seller = models  .BooleanField(verbose_name=_("Seller"), default=False, help_text=_("Are you looking to sell a property?"))
     is_agent = models.BooleanField(verbose_name=_("Agent"), default=False, help_text=_("Are you an agent?"))
     top_agent = models.BooleanField(verbose_name=_("Top Agent"), default=False)
     ratings= models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
