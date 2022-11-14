@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o errexit
+
+set -o nounset
+
+watchmedo auto-restart -d real_state/ -p "*.py" -- celery worker -A real_state --loglevel=info

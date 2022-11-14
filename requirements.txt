@@ -10,3 +10,11 @@ phonenumbers==8.12.33
 psycopg2-binary==2.9.2
 flake8==3.9.2
 djoser==2.1.0
+redis==3.5.3
+celery==4.4.7
+flower==0.9.7
+django-celery-email==3.0.0
+argh==0.26.2
+pyYAML==5.3.1
+watchdog==1.0.2
+
